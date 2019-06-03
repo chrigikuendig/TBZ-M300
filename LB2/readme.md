@@ -3,7 +3,7 @@
 ## Inhalt
 * [Vorwissen](##Vorwissen)
 * [Dokumentation](##Dokumentation)
-* [Probleme](##Probleme)
+* [Reflexion](##Reflexion)
 ## Vorwissen
 
 ### Linux
@@ -64,3 +64,7 @@ UFW ist eine vereinfachte Hostfirewall für Linux. Damit lassen sich mit einfach
 | `sudo ufw reload` | Aktualisieren der FW-Rules |
 
 ## Dokumentation 
+
+
+## Reflexion
+Anfangs gab mir VirtualBox die Fehlermeldung, dass VT-x auf meinem Laptop nicht aktiviert war, obwohl dies laut Task-manager und BIOS aktiviert war. Dieses Problem konnte ich dann schlussendlich lösen, in dem ich VT-x kurz deaktiviert habe und danach wieder neu aktiviert habe. Danach konnte ich VMs wieder starten. 
