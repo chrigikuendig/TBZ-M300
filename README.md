@@ -34,6 +34,21 @@ Hier noch ein paar Befehle und deren Erklärung:
 | `vagrant reload` | Neustart der VM mit aktuellem Vagrantfile |
 | `vagrant status` | Anzeigen des Status der VM |
 | `vagrant ssh-config` | Anzeigen der SSH-Konfiguration der VM |
+  
+### Versionverwaltung / Git
+Github lässt sich hervorragend zur Versionsverwaltung und Dokumentation von Projekten verwenden. Dateien können lokal angepasst werden, dann durch Stagen, "Commit" und "Push" auf github hochgeladen wird. Für jeden Commit wird ein Kommentar angegeben, um die Änderungen nachzuverfolgen.
+  
+Mit Github kenne ich mich nur soweit aus, dass auch schon Software auf github heruntergeladen habe. Selber habe ich github zur Versionsverwaltung noch nie benutzt. Darum musste ich zuerst github kennenlernen, bevor ich in diesem Modul etwas beginnen konnte.
+
+### Markdown
+Markdown ist laut Wikipedia eine Auszeichnungssprache. Damit lassen sich Texte darstellen und mit einfachem Syntax formatieren:
+  
+| Befehl | Erklärung |
+| --- | --- |
+| `# Titel` | Formatierung eines Titels. Je mehr "#", desto kleiner der Titel (Untertitel) |
+| ``code`` | Formatierung als Code |
+| `- [ ] Checkliste` | Formatierung als Checkliste |
+  
 
 ## Leistungsbeurteilungen
 * [LB2](./LB2/readme.md)
