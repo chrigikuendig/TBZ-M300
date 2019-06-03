@@ -49,7 +49,7 @@ Markdown ist laut Wikipedia eine Auszeichnungssprache. Damit lassen sich Texte d
 | ``code`` | Formatierung als Code |
 | `- [ ] Checkliste` | Formatierung als Checkliste |
   
-
+Auch Markdown ist für mich komplettes Neuland, aber dank dem einfachen Syntax nicht schwer zu erlernen.
 ## Leistungsbeurteilungen
 * [LB2](./LB2/readme.md)
 * [LB3](./LB3/readme.md)
