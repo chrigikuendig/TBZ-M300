@@ -25,6 +25,7 @@ Mit Vagrant lassen sich virtuelle Maschinen über die Kommandozeile erstellen ve
 Vor dem Modul 300 kannte ich Vagrant noch nicht. Das Feld der Automatisierung von VMs ist für mich komplettes Neuland. Ich finde es aber jedoch sehr interessant, wie weit man gehen kann, im Bereich der Automatisierung.
 
 Hier noch ein paar Befehle und deren Erklärung:  
+
 | Befehl | Erklärung |
 | --- | --- |
 | `vagrant up` | Startet die im Vagrantfile definierte VM mit allen im Vagrantfile definieten Befehlen |
