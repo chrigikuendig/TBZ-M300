@@ -53,8 +53,11 @@ Auch Markdown ist für mich komplettes Neuland, aber dank dem einfachen Syntax n
 
 ### Systemsicherheit
 
+#### Reverse Proxy
+Der Reverse Proxy verschleiert gegenüber dem Client, von welchem Server er die Daten holt.
+
 #### Uncomplicated Firewall
-UFW ist eine vereinfachte Hostfirewall für Linux. Damit lassen sich mit einfachen Befhle Ports öffnen und schliessen.
+UFW ist eine vereinfachte Hostfirewall für Linux. Damit lassen sich mit einfachen Befehle Ports öffnen und schliessen.
   
 | Befehl | Erklärung |
 | --- | --- |
