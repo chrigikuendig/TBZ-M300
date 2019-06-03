@@ -51,6 +51,17 @@ Markdown ist laut Wikipedia eine Auszeichnungssprache. Damit lassen sich Texte d
   
 Auch Markdown ist für mich komplettes Neuland, aber dank dem einfachen Syntax nicht schwer zu erlernen.
 
+### Systemsicherheit
+
+#### Uncomplicated Firewall
+UFW ist eine vereinfachte Hostfirewall für Linux. Damit lassen sich mit einfachen Befhle Ports öffnen und schliessen.
+  
+| Befehl | Erklärung |
+| --- | --- |
+| `ufw allow from 10.0.0.10 to any port 22` | SSH nur von Host 10.0.0.10 erlauben |
+| `sudo ufw sudo numbered` | Anzeigen der Firewallrules |
+| `sudo ufw delete 1` | Löschen der 1. Firewallrule |
+| `sudo ufw reload` | Aktualisieren der FW-Rules |
 
 ## Leistungsbeurteilungen
 * [LB2](./LB2/readme.md)
