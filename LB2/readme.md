@@ -1,5 +1,9 @@
 # LB2
 
+## Inhalt
+* [Vorwissen](##Vorwissen)
+* [Dokumentation](##Dokumentation)
+* [Probleme](##Probleme)
 ## Vorwissen
 
 ### Linux
@@ -58,3 +62,5 @@ UFW ist eine vereinfachte Hostfirewall für Linux. Damit lassen sich mit einfach
 | `sudo ufw sudo numbered` | Anzeigen der Firewallrules |
 | `sudo ufw delete 1` | Löschen der 1. Firewallrule |
 | `sudo ufw reload` | Aktualisieren der FW-Rules |
+
+## Dokumentation 
