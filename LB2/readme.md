@@ -65,6 +65,8 @@ UFW ist eine vereinfachte Hostfirewall für Linux. Damit lassen sich mit einfach
 
 ## Dokumentation 
 
+### Idee
+Meine Idee ist es, einen Apache Webserver automatisiert aufzusetzen. Zusätzlich soll Webmin installiert werden und mittels Reverse Proxy unter derselben Adresse wie der Apache Webserver, aber unter einem separaten Pfad, bereitzustellen.
 
 ## Reflexion
 Anfangs gab mir VirtualBox die Fehlermeldung, dass VT-x auf meinem Laptop nicht aktiviert war, obwohl dies laut Task-manager und BIOS aktiviert war. Dieses Problem konnte ich dann schlussendlich lösen, in dem ich VT-x kurz deaktiviert habe und danach wieder neu aktiviert habe. Danach konnte ich VMs wieder starten. 
