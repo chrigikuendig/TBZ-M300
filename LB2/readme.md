@@ -65,8 +65,77 @@ UFW ist eine vereinfachte Hostfirewall für Linux. Damit lassen sich mit einfach
 
 ## Dokumentation 
 
+- [Vagrantfile](/LB2/vagrantfile)
+- [Shell-Script](/LB2/web.sh)
+
 ### Idee
-Meine Idee ist es, einen Apache Webserver automatisiert aufzusetzen. Zusätzlich soll Webmin installiert werden und mittels Reverse Proxy unter derselben Adresse wie der Apache Webserver, aber unter einem separaten Pfad, bereitzustellen.
+Meine Idee ist es, einen Apache Webserver automatisiert aufzusetzen. Zusätzlich soll Webmin, ein Monitoring-Webinterface, installiert werden und mittels Reverse Proxy unter derselben Adresse wie der Apache Webserver, aber unter einem separaten Pfad, bereitzustellen.  
+
+### Durchführung
+Reverse Proxy, Apache Webserver und Webmin befinden sich alle auf demselben Host. Damit aber keine Ports für Webmin in der URL angegeben werden müssen, wird Webmin über einen Reverse Proxy auf die Adresse `localhost/webmin` gemappt. Dies geht mit den Einträgen `ProxyPass` & `ProxyPassReserve` im File `/etc/apache2/sites-available/000-default.conf`.
+
+### Netzwerkplan
+Netzwerktechnisch sieht das Ganze wie folgt aus:  
+```
++---------------------------------------------+
+| +-----------------------------------------+ |
+| |                                         | |
+| |                                         | |
+| |                 Internet                | |
+| |                                         | |
+| |                                         | |
+| +--------------------+--------------------+ |
+|                      |   Port 80 TCP        |
+| +--------------------+--------------------+ |
+| |                                         | |
+| |              Reverse Proxy              | |
+| |              192.168.115.10             | |
+| |                                         | |
+| +--------------------+--------------------+ |
+| Erreichbar          / \       Erreichbar    |
+| unter /            /   \      unter /webmin |
+| +------------------+   +------------------+ |
+| |                  |   |                  | |
+| | Apache Webserver |   | Webmin           | |
+| | Port 80 TCP      |   | Port 10000 TCP   | |
+| |                  |   |                  | |
+| +------------------+   +------------------+ |
++---------------------------------------------+
+```
+
+### Konfiguration Reverse Proxy
+Diese Änderungen sind in der Datei `/etc/apache2/sites-available/000-default.conf` vorzunehmen:  
+```
+<VirtualHost *:80>
+        ServerName 192.168.115.10
+        ProxyPass /webmin http://localhost:10000/
+        ProxyPassReverse /webmin/ http://localhost:10000/
+        Redirect permanent /webmin /webmin/
+</VirtualHost>
+```
+
+### Konfiguration Webmin
+In der Datei `/etc/webmin/miniserv.conf` wurden folgende Änderungen vorgenommen:  
+```
+ssl=0
+```  
+
+An die Datei `/etc/webmin/config` müssen folgende Argumente angehängt werden:
+```
+webprefix=/webmin
+webprefixnoredir=1
+referers=192.168.115.10
+```
+
+### Konfiguration Firewall
+In der Host Firewall sind nur die Ports für SSH (22/TCP), HTTP (80/TCP) und HTTPS (443/TCP) freigegeben.
+
+## Testing
+- [ ] Testfall 1: Webmin ist über `localhost/webmin` erreichbar  
+    ![alt text](/LB2/testfall1.png "Testfall 1")
+- [ ] Testfall 2: Server gibt keine Antwort unter `localhost:10000`  
+    ![alt text](/LB2/testfall2.png "Testfall 2")
 
 ## Reflexion
-Anfangs gab mir VirtualBox die Fehlermeldung, dass VT-x auf meinem Laptop nicht aktiviert war, obwohl dies laut Task-manager und BIOS aktiviert war. Dieses Problem konnte ich dann schlussendlich lösen, in dem ich VT-x kurz deaktiviert habe und danach wieder neu aktiviert habe. Danach konnte ich VMs wieder starten. 
+Anfangs gab mir VirtualBox die Fehlermeldung, dass VT-x auf meinem Laptop nicht aktiviert war, obwohl dies laut Task-manager und BIOS aktiviert war. Dieses Problem konnte ich dann schlussendlich lösen, in dem ich VT-x kurz deaktiviert habe und danach wieder neu aktiviert habe. Danach konnte ich VMs wieder starten.  
+Da ich mich mit Reverse Proxy noch nicht auskannte, konnte ich diese Arbeit nicht einfach aus dem Ärmel schütteln. Es war jedoch sehr interessant, meinen Wissenstand zu erweitern.
