@@ -1,9 +1,28 @@
 # LB2
 
 ## Inhalt
-* [Vorwissen](##Vorwissen)
-* [Dokumentation](##Dokumentation)
-* [Reflexion](##Reflexion)
+- [LB2](#lb2)
+  - [Inhalt](#inhalt)
+  - [Vorwissen](#vorwissen)
+    - [Linux](#linux)
+    - [Virtualisierung](#virtualisierung)
+    - [Vagrant](#vagrant)
+    - [Versionverwaltung/Git](#versionverwaltunggit)
+    - [Markdown](#markdown)
+    - [Systemsicherheit](#systemsicherheit)
+      - [Reverse Proxy](#reverse-proxy)
+      - [Uncomplicated Firewall](#uncomplicated-firewall)
+  - [Dokumentation](#dokumentation)
+    - [Idee](#idee)
+    - [Durchführung](#durchf%C3%BChrung)
+    - [Netzwerkplan](#netzwerkplan)
+    - [Konfiguration Reverse Proxy](#konfiguration-reverse-proxy)
+    - [Konfiguration Webmin](#konfiguration-webmin)
+    - [Konfiguration Firewall](#konfiguration-firewall)
+  - [Testing](#testing)
+  - [Reflexion](#reflexion)
+    - [Vergleich Wissensstand](#vergleich-wissensstand)
+
 ## Vorwissen
 
 ### Linux
@@ -32,7 +51,7 @@ Hier noch ein paar Befehle und deren Erklärung:
 | `vagrant status` | Anzeigen des Status der VM |
 | `vagrant ssh-config` | Anzeigen der SSH-Konfiguration der VM |
   
-### Versionverwaltung / Git
+### Versionverwaltung/Git
 Github lässt sich hervorragend zur Versionsverwaltung und Dokumentation von Projekten verwenden. Dateien können lokal angepasst werden, dann durch Stagen, "Commit" und "Push" auf github hochgeladen wird. Für jeden Commit wird ein Kommentar angegeben, um die Änderungen nachzuverfolgen.
   
 Mit Github kenne ich mich nur soweit aus, dass auch schon Software auf github heruntergeladen habe. Selber habe ich github zur Versionsverwaltung noch nie benutzt. Darum musste ich zuerst github kennenlernen, bevor ich in diesem Modul etwas beginnen konnte.
@@ -139,3 +158,10 @@ In der Host Firewall sind nur die Ports für SSH (22/TCP), HTTP (80/TCP) und HTT
 ## Reflexion
 Anfangs gab mir VirtualBox die Fehlermeldung, dass VT-x auf meinem Laptop nicht aktiviert war, obwohl dies laut Task-manager und BIOS aktiviert war. Dieses Problem konnte ich dann schlussendlich lösen, in dem ich VT-x kurz deaktiviert habe und danach wieder neu aktiviert habe. Danach konnte ich VMs wieder starten.  
 Da ich mich mit Reverse Proxy noch nicht auskannte, konnte ich diese Arbeit nicht einfach aus dem Ärmel schütteln. Es war jedoch sehr interessant, meinen Wissenstand zu erweitern.
+
+### Vergleich Wissensstand
+Vor LB2 hatte ich noch absolut keine Ahnung, wie man solche Umgebung automatisiert aufsetzen kann. Im Bereich von Vagrant habe ich sehr viel dazu gelernt, da mir diese Tool vorher völlig unbekannt war.  
+  
+Mit Github habe ich vorher auch noch nie gearbeitet. Am Anfang war ich noch etwas unsicher, wie die Idee dahinter funktioniert, doch mittlerweile kann ich gut mit Github umgehen, ebenso mit Markdown.  
+  
+Reverse Proxy habe ich vor LB2 schon oft gehört, hatte aber nie den Mut, mich damit zu beschäftigen, da ich dachte, es sei sehr kompliziert. Nach LB2 merke ich, dass dieser Respekt unbegründet war.
