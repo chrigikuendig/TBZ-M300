@@ -18,8 +18,52 @@ sudo cat > /etc/apache2/sites-available/000-default.conf << EOL
         ProxyPass /webmin http://localhost:10000/
         ProxyPassReverse /webmin/ http://localhost:10000/
         Redirect permanent /webmin /webmin/
+        DocumentRoot /var/www/html
 </VirtualHost>
 EOL
+
+# Apache HTML-Startseite bearbeiten
+sudo rm /var/www/html/index.html
+sudo touch /var/www/html/index.html
+sudo echo '<!doctype html>' >> /var/www/html/index.html
+sudo echo '<title>Test-Seite</title>' >> /var/www/html/index.html
+sudo echo '<style>' >> /var/www/html/index.html
+sudo echo 'body { text-align: center; padding: 150px; }' >> /var/www/html/index.html
+sudo echo 'h1 { font-size: 50px; }' >> /var/www/html/index.html
+sudo echo 'body { font: 20px Helvetica, sans-serif; color: #333; }' >> /var/www/html/index.html
+sudo echo 'article { display: block; text-align: left; width: 650px; margin: 0 auto; }' >> /var/www/html/index.html
+sudo echo 'a { color: #dc8100; text-decoration: none; }' >> /var/www/html/index.html
+sudo echo 'a:hover { color: #333; text-decoration: none; }' >> /var/www/html/index.html
+sudo echo '</style>' >> /var/www/html/index.html
+
+sudo echo '<article>' >> /var/www/html/index.html
+sudo echo '<h1>Dies ist eine Testwebseite!</h1>' >> /var/www/html/index.html
+sudo echo '<div>' >> /var/www/html/index.html
+sudo echo '<p>Diese Webseite dient nur als Test und als Demonstration, dass auch Der Apache-Webserver erreichbar ist</p>' >> /var/www/html/index.html
+sudo echo '<p>&mdash; Christoph Kuendig</p>' >> /var/www/html/index.html
+sudo echo '</div>' >> /var/www/html/index.html
+sudo echo '</article>' >> /var/www/html/index.html
+sudo echo '<pre style="text-align: center; line-height: 0.5">' >> /var/www/html/index.html
+sudo echo '      _       _         </br>' >> /var/www/html/index.html
+sudo echo '     (_\     /_)        </br>' >> /var/www/html/index.html
+sudo echo '       ))   ((          </br>' >> /var/www/html/index.html
+sudo echo '     .-"""""""-.        </br>' >> /var/www/html/index.html
+sudo echo ' /^\/  _.   _.  \/^\    </br>' >> /var/www/html/index.html
+sudo echo ' \(   /__\ /__\   )/    </br>' >> /var/www/html/index.html
+sudo echo '  \,  \o_/_\o_/  ,/     </br>' >> /var/www/html/index.html
+sudo echo '    \    (_)    /       </br>' >> /var/www/html/index.html
+sudo echo '     `-. === .-/        </br>' >> /var/www/html/index.html
+sudo echo '      __) - (__         </br>' >> /var/www/html/index.html
+sudo echo '     /  `~~~`  \        </br>' >> /var/www/html/index.html
+sudo echo '    /  /     \  \       </br>' >> /var/www/html/index.html
+sudo echo '    \ :       ; /       </br>' >> /var/www/html/index.html
+sudo echo '     \|==(*)==|/        </br>' >> /var/www/html/index.html
+sudo echo '      :       :         </br>' >> /var/www/html/index.html
+sudo echo '       \  |  /          </br>' >> /var/www/html/index.html
+sudo echo '     ___)=|=(___        </br>' >> /var/www/html/index.html
+sudo echo '    {____/ \____}       </br>' >> /var/www/html/index.html
+sudo echo '</pre>' >> /var/www/html/index.html
+
 
 # Webmin repo installieren
 sudo echo 'deb http://download.webmin.com/download/repository sarge contrib' > /etc/apt/sources.list.d/webmin.list
