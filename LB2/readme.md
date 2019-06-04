@@ -84,7 +84,7 @@ UFW ist eine vereinfachte Hostfirewall für Linux. Damit lassen sich mit einfach
 
 ## Dokumentation 
 
-- [Vagrantfile](/LB2/vagrantfile)
+- [Vagrantfile](/LB2/Vagrantfile)
 - [Shell-Script](/LB2/web.sh)
 
 ### Idee
